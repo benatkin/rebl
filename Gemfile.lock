@@ -1,3 +1,11 @@
+GIT
+  remote: http://github.com/TrevorBurnham/barista_growl.git
+  revision: 4d52084c5e0fd0d040e2da2e8b65d8344ce36672
+  specs:
+    barista_growl (0.1.0)
+      barista
+      growl
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -30,10 +38,20 @@ GEM
     activesupport (3.0.0)
     arel (1.0.1)
       activesupport (~> 3.0.0)
+    barista (0.5.1)
+      open4
     builder (2.1.2)
+    closure-compiler (0.3.3)
+    compass (0.10.5)
+      haml (>= 3.0.4)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    growl (1.0.3)
+    haml (3.0.21)
     i18n (0.4.1)
+    jammit (0.5.3)
+      closure-compiler (>= 0.1.0)
+      yui-compressor (>= 0.9.1)
     jquery-rails (0.2.1)
       rails (~> 3.0.0)
     mail (2.2.6.1)
@@ -41,6 +59,7 @@ GEM
       mime-types
       treetop (>= 1.4.5)
     mime-types (1.16)
+    open4 (1.0.1)
     polyglot (0.3.1)
     rack (1.2.1)
     rack-mount (0.6.13)
@@ -66,11 +85,17 @@ GEM
     treetop (1.4.8)
       polyglot (>= 0.3.1)
     tzinfo (0.3.23)
+    yui-compressor (0.9.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  barista (>= 0.5.0)
+  barista_growl!
+  compass
+  haml
+  jammit
   jquery-rails
   rails (= 3.0.0)
   sqlite3-ruby
