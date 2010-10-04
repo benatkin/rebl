@@ -5,6 +5,9 @@
     = stylesheet_link_tag 'compiled/print.css', :media => 'print'
     /[if IE]   
       = stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
+    = javascript_include_tag 'javascripts/jquery.js'
+    = javascript_include_tag 'javascripts/jquery-ui.js'
+    = javascript_include_tag 'javascripts/rebl.js'
     = csrf_meta_tag
   %body
     #logo
