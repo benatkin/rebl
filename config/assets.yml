@@ -1,0 +1,5 @@
+embed_assets: on
+
+stylesheets:
+  common:
+    - public/compiled/*.css

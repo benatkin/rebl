@@ -4,3 +4,19 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 @import "compass/reset";
+@import "compass/css3/box-shadow";
+
+#logo {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  padding: 0.2em;
+  background-color: #ff0;
+  @include box-shadow(#990, 5px, 5px);
+  h1 {
+    font-size: 20pt;
+    em {
+      font-style: italic;
+    }
+  }
+}
