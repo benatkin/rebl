@@ -62,7 +62,7 @@ a img {
   border: none;
 }
 
-/* line 9, ../../../app/stylesheets/screen.scss */
+/* line 10, ../../../app/stylesheets/screen.scss */
 #logo {
   position: absolute;
   left: 0px;
@@ -74,11 +74,11 @@ a img {
   -o-box-shadow: #999900 5px 5px 5px 0;
   box-shadow: #999900 5px 5px 5px 0;
 }
-/* line 16, ../../../app/stylesheets/screen.scss */
+/* line 17, ../../../app/stylesheets/screen.scss */
 #logo h1 {
   font-size: 20pt;
 }
-/* line 18, ../../../app/stylesheets/screen.scss */
+/* line 19, ../../../app/stylesheets/screen.scss */
 #logo h1 em {
   font-style: italic;
 }
