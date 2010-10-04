@@ -1,5 +1,8 @@
 (function() {
-  var Doc, DocList, Input, Rebl, Toolbar;
+  var Doc, DocList, Input, Output, Rebl, Toolbar;
+  var __bind = function(func, context) {
+    return function(){ return func.apply(context, arguments); };
+  };
   DocList = function() {};
   DocList.prototype.call = function(env) {
     var docwrap, input, sel, toolbar;
@@ -57,7 +60,10 @@
   };
   Input = function() {};
   Input.prototype.call = function(env) {
-    var a, center, input, left, right, sel, textarea, three;
+    var center, close, input, left, right, sel, textarea, three;
+    if (env.event) {
+      return this.handleEvent(env);
+    }
     sel = $(env.element);
     if ($('textarea', sel).length === 0) {
       three = $('<div>').addClass('three');
@@ -67,13 +73,52 @@
       center = $('<div>').addClass('center tags');
       three.append(center);
       right = $('<div>').addClass('right links');
-      a = $('<a>').addClass('oplink close').attr('href', 'javascript:void(0)').text('X');
-      right.append(a);
+      close = $('<a>').addClass('oplink close').attr('href', 'javascript:void(0)').text('X');
+      right.append(close);
       three.append(right);
       input = $('<div>').addClass('input');
       sel.append(input);
       textarea = $('<textarea>');
-      return input.append(textarea);
+      input.append(textarea);
+      return $('.doc.input textarea').live('keypress keyup', __bind(function(e) {
+        return this.call({
+          'event': e
+        });
+      }, this));
+    }
+  };
+  Input.prototype.handleEvent = function(env) {
+    var docwrap, env2, output, sel;
+    env2 = {};
+    if (env.event.type === 'keypress' && env.event.keyCode === 13) {
+      env.event.preventDefault();
+      env2.enter = true;
+      env2.text = $('textarea').val();
+    } else if (env.event.type === 'keyup') {
+      env2.text = $('textarea').val();
+    } else {
+      env2 = null;
+    }
+    if (env2 && env2.enter) {
+      sel = $(env.event.target).parents('.doclist').first();
+      docwrap = $('<div>').addClass('docwrap');
+      sel.append(docwrap);
+      output = $('<div>').addClass('doc output');
+      docwrap.append(output);
+      return output.rebl(env2);
+    }
+  };
+  Output = function() {};
+  Output.prototype.call = function(env) {
+    var body, date, meta, sel;
+    sel = $(env.element);
+    console.log(sel);
+    body = $('<div>').addClass('body').text(env.text);
+    sel.append(body);
+    if (env.date) {
+      meta = $('<div>').addClass('meta');
+      sel.append(meta);
+      return (date = $('<span>').addClass('date').text(env.date));
     }
   };
   Doc = function() {};
@@ -86,7 +131,10 @@
     if (!this.input) {
       this.input = new Input();
     }
-    _result = []; _ref = ['toolbar', 'input'];
+    if (!this.output) {
+      this.output = new Output();
+    }
+    _result = []; _ref = ['toolbar', 'input', 'output'];
     for (_i = 0, _len = _ref.length; _i < _len; _i++) {
       cls = _ref[_i];
       _result.push(sel.hasClass(cls) ? this[cls].call(env) : null);
