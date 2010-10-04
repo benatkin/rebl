@@ -62,23 +62,119 @@ a img {
   border: none;
 }
 
-/* line 10, ../../../app/stylesheets/screen.scss */
-#logo {
+/* line 13, ../../../app/stylesheets/screen.scss */
+.topright {
   position: absolute;
-  left: 0px;
   top: 0px;
-  padding: 0.2em;
-  background-color: #ff0;
-  -moz-box-shadow: #999900 5px 5px 5px 0;
-  -webkit-box-shadow: #999900 5px 5px 5px 0;
-  -o-box-shadow: #999900 5px 5px 5px 0;
-  box-shadow: #999900 5px 5px 5px 0;
+  right: 0px;
 }
-/* line 17, ../../../app/stylesheets/screen.scss */
-#logo h1 {
+
+/* line 19, ../../../app/stylesheets/screen.scss */
+.logo {
+  padding-top: 0.5em;
+  padding-left: 0.3em;
+  padding-bottom: 0.1em;
+  padding-right: 0.4em;
+  background-color: #ff0;
+  -moz-box-shadow: #999900 -5px 5px 5px 0;
+  -webkit-box-shadow: #999900 -5px 5px 5px 0;
+  -o-box-shadow: #999900 -5px 5px 5px 0;
+  box-shadow: #999900 -5px 5px 5px 0;
+}
+/* line 26, ../../../app/stylesheets/screen.scss */
+.logo h1 {
   font-size: 20pt;
 }
-/* line 19, ../../../app/stylesheets/screen.scss */
-#logo h1 em {
+/* line 28, ../../../app/stylesheets/screen.scss */
+.logo h1 em {
   font-style: italic;
+}
+
+/* line 34, ../../../app/stylesheets/screen.scss */
+.doclist {
+  margin-top: 3em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 600px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 120%;
+}
+
+/* line 44, ../../../app/stylesheets/screen.scss */
+.docwrap {
+  padding-top: 0.7em;
+  padding-bottom: 0.7em;
+}
+
+/* line 50, ../../../app/stylesheets/screen.scss */
+.doc a {
+  text-decoration: none;
+}
+/* line 53, ../../../app/stylesheets/screen.scss */
+.doc a:hover {
+  text-decoration: underline;
+}
+/* line 56, ../../../app/stylesheets/screen.scss */
+.doc .subject {
+  color: #44b;
+  font-weight: bold;
+}
+/* line 60, ../../../app/stylesheets/screen.scss */
+.doc .cue {
+  color: #4b4;
+  font-style: italic;
+}
+/* line 66, ../../../app/stylesheets/screen.scss */
+.doc .code {
+  font-weight: bold;
+}
+/* line 70, ../../../app/stylesheets/screen.scss */
+.doc .input textarea {
+  width: 100%;
+}
+/* line 74, ../../../app/stylesheets/screen.scss */
+.doc .output {
+  font-style: italic;
+}
+/* line 77, ../../../app/stylesheets/screen.scss */
+.doc .date {
+  font-style: italic;
+  color: #888;
+}
+/* line 81, ../../../app/stylesheets/screen.scss */
+.doc .tag.lang {
+  color: #228b22;
+}
+/* line 84, ../../../app/stylesheets/screen.scss */
+.doc .tag.lang:hover {
+  color: #228b22;
+}
+/* line 87, ../../../app/stylesheets/screen.scss */
+.doc a.oplink {
+  color: #888;
+}
+/* line 90, ../../../app/stylesheets/screen.scss */
+.doc .three {
+  position: relative;
+}
+/* line 92, ../../../app/stylesheets/screen.scss */
+.doc .three .left {
+  top: 0;
+  left: 0;
+}
+/* line 96, ../../../app/stylesheets/screen.scss */
+.doc .three .center {
+  position: absolute;
+  top: 0;
+  left: 33%;
+  right: 33%;
+  text-align: center;
+}
+/* line 103, ../../../app/stylesheets/screen.scss */
+.doc .three .right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: right;
 }

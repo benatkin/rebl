@@ -10,5 +10,34 @@
     = javascript_include_tag 'javascripts/rebl.js'
     = csrf_meta_tag
   %body
-    #logo
+    .logo.topright
       %h1 <em>re</em>b<em>l</em>
+    .doclist
+      .docwrap.sample
+        .doc
+          .three
+            .left.cue
+              enter text:
+            .center.tags
+              %a.tag.lang{:href => 'javascript:void(0)'} #text
+            .right.links
+              %a.oplink.close.lang{:href => 'javascript:void(0)'} X
+          .input
+            %textarea 
+      .docwrap.sample
+        .doc
+          .meta
+            %span.subject Sample Document
+          .body
+            Something clever ought to be here.
+          .meta
+            .date 15 minutes ago
+      .docwrap.sample
+        .doc
+          .code
+            4 + 7
+          .output
+            11
+          .meta
+            %span.date 16 minutes ago
+            %a.tag.lang{:href => 'javascript:void(0)'} #js
