@@ -132,38 +132,40 @@ a img {
 /* line 70, ../../../app/stylesheets/screen.scss */
 .doc .input textarea {
   width: 100%;
+  padding: 0.2em;
+  font-family: Helvetica, Arial, sans-serif;
 }
-/* line 74, ../../../app/stylesheets/screen.scss */
+/* line 76, ../../../app/stylesheets/screen.scss */
 .doc .output {
   font-style: italic;
 }
-/* line 77, ../../../app/stylesheets/screen.scss */
+/* line 79, ../../../app/stylesheets/screen.scss */
 .doc .date {
   font-style: italic;
   color: #888;
 }
-/* line 81, ../../../app/stylesheets/screen.scss */
+/* line 83, ../../../app/stylesheets/screen.scss */
 .doc .tag.lang {
   color: #228b22;
 }
-/* line 84, ../../../app/stylesheets/screen.scss */
+/* line 86, ../../../app/stylesheets/screen.scss */
 .doc .tag.lang:hover {
   color: #228b22;
 }
-/* line 87, ../../../app/stylesheets/screen.scss */
+/* line 89, ../../../app/stylesheets/screen.scss */
 .doc a.oplink {
   color: #888;
 }
-/* line 90, ../../../app/stylesheets/screen.scss */
+/* line 92, ../../../app/stylesheets/screen.scss */
 .doc .three {
   position: relative;
 }
-/* line 92, ../../../app/stylesheets/screen.scss */
+/* line 94, ../../../app/stylesheets/screen.scss */
 .doc .three .left {
   top: 0;
   left: 0;
 }
-/* line 96, ../../../app/stylesheets/screen.scss */
+/* line 98, ../../../app/stylesheets/screen.scss */
 .doc .three .center {
   position: absolute;
   top: 0;
@@ -171,7 +173,7 @@ a img {
   right: 33%;
   text-align: center;
 }
-/* line 103, ../../../app/stylesheets/screen.scss */
+/* line 105, ../../../app/stylesheets/screen.scss */
 .doc .three .right {
   position: absolute;
   top: 0;
@@ -179,7 +181,7 @@ a img {
   text-align: right;
 }
 
-/* line 112, ../../../app/stylesheets/screen.scss */
+/* line 114, ../../../app/stylesheets/screen.scss */
 .doc.toolbar a {
   margin-right: 0.8em;
 }

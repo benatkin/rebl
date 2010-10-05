@@ -21,7 +21,7 @@ class Toolbar
 
     sel = $(env.element)
     if $('a', sel).length == 0
-      for link in [{'title': 'Help',       'cls': 'help'}, {'title': 'About',      'cls': 'about'}, {'title': 'Hide Input', 'cls': 'showinput'}]
+      for link in [{'title': 'Help', 'cls': 'help'}, {'title': 'About', 'cls': 'about'}]
         env2 = {}
         $.extend(env2, env)
         $.extend(env2, link)
@@ -71,19 +71,15 @@ class Input
       env2 = null
 
     if env2 and env2.enter
-      sel = $(env.event.target).parents('.doclist').first()
-      docwrap = $('<div>').addClass('docwrap')
-      sel.append(docwrap)
-      output = $('<div>').addClass('doc output')
-      docwrap.append(output)
+      sel = $(env.event.target).parents('.docwrap').first()
+      docwrap = $('<div>').addClass('docwrap').insertAfter(sel)
+      output = $('<div>').addClass('doc output').appendTo(docwrap)
       output.rebl(env2)
 
 class Output
   call: (env) ->
     sel = $(env.element)
-    console.log(sel)
-    body = $('<div>').addClass('body').text(env.text)
-    sel.append(body)
+    body = $('<div>').addClass('body').text(env.text).appendTo(sel)
     if env.date
       meta = $('<div>').addClass('meta')
       sel.append(meta)

@@ -100,11 +100,9 @@
       env2 = null;
     }
     if (env2 && env2.enter) {
-      sel = $(env.event.target).parents('.doclist').first();
-      docwrap = $('<div>').addClass('docwrap');
-      sel.append(docwrap);
-      output = $('<div>').addClass('doc output');
-      docwrap.append(output);
+      sel = $(env.event.target).parents('.docwrap').first();
+      docwrap = $('<div>').addClass('docwrap').insertAfter(sel);
+      output = $('<div>').addClass('doc output').appendTo(docwrap);
       return output.rebl(env2);
     }
   };
@@ -112,9 +110,7 @@
   Output.prototype.call = function(env) {
     var body, date, meta, sel;
     sel = $(env.element);
-    console.log(sel);
-    body = $('<div>').addClass('body').text(env.text);
-    sel.append(body);
+    body = $('<div>').addClass('body').text(env.text).appendTo(sel);
     if (env.date) {
       meta = $('<div>').addClass('meta');
       sel.append(meta);
