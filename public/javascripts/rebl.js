@@ -67,7 +67,7 @@
         'method': 'build'
       });
     } else if (_.size(env.args) === 0) {
-      return "Welcome to rebl! For help, run $.rebl({help: true}).";
+      return "Welcome to rebl! For help, run $.rebl({help: true}).*TODO: implement*";
     }
   };
   $.Rebl = new Rebl();

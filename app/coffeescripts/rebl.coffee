@@ -3,6 +3,7 @@ class Dispatcher
     @current = @root = root
 
   call: (env) ->
+    env.dispatcher = this
     if env.action and env.action.path
       @current = @navigate(@current, env.action.path)
     if not @current
@@ -27,6 +28,10 @@ class Dispatcher
 class Base
   constructor: (parent) ->
     @parent = parent
+    @root = parent.root
+
+  dispatch: (env) ->
+    env.dispatcher.call(env)
 
   call: (env) ->
     if env.action && env.action.method and _.isFunction(this[env.action.method])
@@ -47,9 +52,9 @@ class Rebl extends Base
 
   call: (env) ->
     if env.selector
-      @next(env, {'path': ['widget'], 'method': 'build'})
+      @dispatch(env, {'path': ['widget'], 'method': 'build'})
     else if _.size(env.args) == 0
-      "Welcome to rebl! For help, run $.rebl({help: true})."
+      "Welcome to rebl! For help, run $.rebl({help: true}).*TODO: implement*"
 
 $.Rebl = new Rebl
 
